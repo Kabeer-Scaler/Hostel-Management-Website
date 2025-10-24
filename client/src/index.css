@@ -1,0 +1,892 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box; /* Important for padding to work right */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+button[type="submit"]:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d93025;
+  background: #fbeae9;
+  border: 1px solid #d93025;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+}
+
+.form-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-link a:hover {
+  text-decoration: underline;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.google-btn:hover {
+  background-color: #357ae8;
+}
+
+/* === Navbar & Layout Styling === */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Dark background */
+  color: white;           /* White text */
+  padding: 0 2rem;        /* Padding left/right */
+  height: 60px;           /* Fixed height */
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navbar-links a {
+  color: #eee; /* Light gray for links */
+  text-decoration: none;
+  padding: 0 1rem; /* Space between links */
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #007bff; /* Blue on hover */
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-username {
+  margin-right: 1rem;
+  font-style: italic;
+}
+
+.logout-btn {
+  background: #dc3545; /* Red */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background: #c82333; /* Darker red on hover */
+}
+
+/* This is the main content area below the navbar */
+.app-content {
+  padding: 2rem;
+}
+
+/* === Dashboard Styling === */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode styles for cards */
+@media (prefers-color-scheme: dark) {
+  .info-card {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+.info-card h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.info-card p {
+  line-height: 1.6;
+}
+
+.card-link-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.card-link-button:hover {
+  background-color: #0056b3;
+}
+
+/* === Mess Page Styling === */
+.mess-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mess-toggle-group {
+  display: flex;
+  align-items: center;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mess-toggle-group label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mess-toggle-group {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+/* Modern Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin: 0;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+input[type="checkbox"].toggle-switch {
+  width: 50px;
+  height: 28px;
+}
+.toggle-switch::before {
+  content: '';
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .toggle-switch::before {
+  background-color: #007bff;
+}
+input:checked + .toggle-switch::after {
+  transform: translateX(22px);
+}
+/* End Toggle Switch */
+
+.mess-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.mess-option-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mess-option-card.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.mess-option-card:hover {
+  transform: translateY(-5px);
+}
+
+.mess-option-card h4 {
+  margin-top: 0;
+}
+
+.mess-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mess-option-card {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+  .mess-option-card.selected {
+    border-color: #007bff;
+  }
+}
+
+.mess-actions {
+  margin-top: 2rem;
+}
+
+.mess-actions button {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mess-actions button:disabled {
+  background-color: #aaa;
+}
+
+.success-message {
+  color: #28a745;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* === Complaints Page Styling === */
+.complaints-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.complaint-form {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .complaint-form {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+.complaint-form h3 {
+  margin-top: 0;
+}
+
+.complaint-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.complaint-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.complaint-form button:disabled {
+  background-color: #aaa;
+}
+
+.complaints-list h3 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .complaints-list h3 {
+    border-color: #444;
+  }
+}
+
+.complaint-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .complaint-card {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.complaint-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .complaint-date {
+    color: #aaa;
+  }
+}
+
+.complaint-issue {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.status-Pending {
+  background-color: #ffc107;
+  color: #333;
+}
+.status-In-Progress {
+  background-color: #007bff;
+  color: white;
+}
+.status-Resolved {
+  background-color: #28a745;
+  color: white;
+}
+
+/* === Attendance Page Styling === */
+.attendance-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mark-attendance-box {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mark-attendance-box {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+.mark-attendance-box h3 {
+  margin-top: 0;
+}
+
+.mark-attendance-box button {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mark-attendance-box button:disabled {
+  background-color: #aaa;
+}
+
+.attendance-history h3 {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .attendance-history h3 {
+    border-color: #444;
+  }
+}
+
+.attendance-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attendance-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.attendance-list li:last-child {
+  border-bottom: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .attendance-list li {
+    border-color: #444;
+  }
+}
+
+.attendance-date {
+  font-weight: 600;
+}
+
+/* We can re-use the status badge from complaints */
+.status-Present {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-Absent {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* === Admin Management Page Styling === */
+.admin-manage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.admin-form-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin-form-card {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+.admin-form-card h3 {
+  margin-top: 0;
+}
+
+.admin-form-card .form-group {
+  margin-bottom: 1rem;
+}
+
+.admin-form-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.admin-form-card input,
+.admin-form-card select {
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.admin-form-card button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.admin-form-card button:disabled {
+  background-color: #aaa;
+}
+
+.admin-list-container {
+  margin-top: 2rem;
+}
+/* === Admin Complaints Page Styling === */
+.admin-complaint-card {
+  /* Re-use .complaint-card styles but add more spacing */
+  padding: 1.5rem;
+}
+
+.complaint-meta {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #555;
+  background: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .complaint-meta {
+    background: #2a2a2a;
+    color: #ccc;
+  }
+}
+
+.complaint-meta p {
+  margin: 0.25rem 0;
+}
+
+.admin-complaint-actions {
+  margin-top: 1rem;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .admin-complaint-actions {
+    border-color: #444;
+  }
+}
+
+.admin-complaint-actions label {
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+.admin-complaint-actions select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* === Admin Mess Page Styling === */
+.form-button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-button-group .cancel-btn {
+  background-color: #6c757d; /* Gray */
+}
+.form-button-group .cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.admin-mess-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mess-option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mess-option-item {
+    background: #333;
+    border-color: #444;
+  }
+}
+
+.mess-option-info strong {
+  font-size: 1.1rem;
+}
+.mess-option-info p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mess-option-info p {
+    color: #bbb;
+  }
+}
+
+.mess-option-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mess-option-actions .edit-btn {
+  background: #ffc107; /* Yellow */
+  color: #333;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.mess-option-actions .delete-btn {
+  background: #dc3545; /* Red */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* === Admin Attendance Page Styling === */
+
+/* Tweak the existing list item style */
+.attendance-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+  gap: 1rem;
+}
+
+.attendance-user-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: block; /* Stacks name/email */
+}
+
+.attendance-user-email {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.attendance-list .attendance-date {
+    margin-right: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .attendance-user-email {
+    color: #bbb;
+  }
+}
+
+/* === Mess Summary Page Styling === */
+.summary-container {
+  margin-top: 2rem;
+}
+
+.summary-total-card {
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.summary-total-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.summary-total-card p {
+  margin: 0.5rem 0 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.summary-table th,
+.summary-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.summary-table th {
+  background-color: #f4f4f4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .summary-table th,
+  .summary-table td {
+    border-color: #444;
+  }
+  .summary-table th {
+    background-color: #333;
+  }
+}
