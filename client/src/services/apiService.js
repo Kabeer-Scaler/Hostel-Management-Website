@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // 1. DEFINE THE BASE URL
 // This is the URL where your backend server is running
-const API_URL = 'https://hostel-management-website-jkl3.onrender.com/api'; // Make sure this port matches your backend!
+const API_URL = 'http://hostel-management-website-jkl3.onrender.com/api'; // Make sure this port matches your backend!
 
 // 2. CREATE THE AXIOS INSTANCE
 // We create a 'template' for all our API calls
