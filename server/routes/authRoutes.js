@@ -20,7 +20,7 @@ router.get(
 router.get(
   '/google/callback',
   passport.authenticate('google', {
-    failureRedirect: 'http://localhost:5173/login', // Redirect to frontend login on fail
+    failureRedirect: `${process.env.FRONTEND_URL}/login`, // Redirect to frontend login on fail
     session: false,
   }),
   (req, res) => {
@@ -36,7 +36,7 @@ router.get(
 
     // 2. Redirect back to the *frontend* and pass the token in the URL
     // We'll create a special frontend route to handle this.
-    res.redirect(`http://localhost:5173/auth/callback?token=${token}`);
+    res.redirect(`${process.env.FRONTEND_URL}/auth/callback?token=${token}`);
   }
 );
 
