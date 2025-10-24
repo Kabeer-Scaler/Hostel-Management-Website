@@ -11,7 +11,7 @@ module.exports = function (passport) {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         // This MUST match the route in authRoutes.js and your Google Console setup
-        callbackURL: '/api/auth/google/callback',
+        callbackURL: 'https://hostel-management-website-jkl3.onrender.com/api/auth/google/callback',
       },
       async (accessToken, refreshToken, profile, done) => {
         // This is the "verify" callback. It runs after Google authenticates the user.
