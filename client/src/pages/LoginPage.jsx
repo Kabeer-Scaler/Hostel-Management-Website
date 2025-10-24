@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 
-const GOOGLE_AUTH_URL = 'http://localhost:5000/api/auth/google';
+const GOOGLE_AUTH_URL = 'https://hostel-management-website-jkl3.onrender.com/api/auth/google';
 
 const LoginPage = () => {
   // 1. Get the login function from our AuthContext
