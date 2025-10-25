@@ -165,13 +165,13 @@ This application is deployed in two parts:
     * **Setup:** Deployed as a Node.js Web Service. Environment variables set in Render dashboard. Root directory set to **blank** (root of repo). Start command: `npm start`. MongoDB Atlas IP Access configured for `0.0.0.0/0`.
 
 2.  **Frontend (Client):** Hosted on **Vercel**.
-    * **Live URL:** `https://hostel-management-website-one.vercel.app` *(Replace with your actual Vercel link)*
+    * **Live URL:** `https://hostel-management-website-one.vercel.app` 
     * **Setup:** Deployed as a Vite project. Root directory set to `client`. `API_URL` in `apiService.js` points to the live Render URL.
 
 **Google OAuth Configuration (Production):**
 
-* **Authorized JavaScript origins:** Must include your Vercel URL (e.g., `https://hostel-management-website-one.vercel.app`).
-* **Authorized redirect URIs:** Must include your Render callback URL (e.g., `https://hostel-management-website-jkl3.onrender.com/api/auth/google/callback`).
+* **Authorized JavaScript origins:** (e.g., `https://hostel-management-website-one.vercel.app`).
+* **Authorized redirect URIs:** (e.g., `https://hostel-management-website-jkl3.onrender.com/api/auth/google/callback`).
 
 ---
 
